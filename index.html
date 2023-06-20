@@ -11,7 +11,16 @@
   <link rel="icon" type="image/x-icon" href="img/lover-icon.png">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/jquery.min.js" defer=""></script>
-  <script src="js/index.js" defer=""></script>
+  <script>
+    function hitokoto() {
+        var hitokoto = "我是099号宇航员 守护未知星球的小行星";
+        var dom = document.querySelector('#hitokoto');
+        Array.isArray(dom) ? dom[0].innerText = hitokoto : dom.innerText = hitokoto;
+    }
+    function play() {
+        document.getElementById("music").play();
+    }
+  </script>
 </head>
 
 <body>
@@ -19,7 +28,7 @@
     <div id="ti">
       春风十里不如你！
     </div>
-    <div id="hitokoto">
+    <div id="hitokoto" onclick="play()">
       <script>
         hitokoto()
       </script>
@@ -106,9 +115,9 @@
 
       <a href="https://fxgzy.love"><br><b>Copyright © 2023 By 小范同学</b><br> </a>
     </div>
-    <audio autoplay>
-      <source src="https://api.uomg.com/api/rand.music?sort=热歌榜" type="audio/mpeg">
-    </audio>
+    <audio id="music" autoplay="autoplay" loop="loop">
+      <source src="./mp3/1.mp3" type="audio/mpeg">
+  </audio>
 </body>
 
 </html>
